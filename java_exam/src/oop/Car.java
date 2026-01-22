@@ -16,6 +16,12 @@ public class Car {
 	 * 브레이크페달 누르면 속도감소*/
 	int speed;
 	
+	String name;
+	public Car(String name) {
+		this.name=name;
+
+	}
+	
 	/**
 	 * <pre>
 	 * 엔진 상태에 따라서 시동을 켜거나 끈다

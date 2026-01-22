@@ -18,6 +18,10 @@ public class Custumer {
 	int canBasketWeight;
 	int wishPurchase;
 	
+	public Custumer(int walletMoney) {
+		this.walletMoney=walletMoney;
+	}
+	
 	public int buyProduct(int howMany) {
 		System.out.println(walletMoney);
 		int productPay=howMany*1000;

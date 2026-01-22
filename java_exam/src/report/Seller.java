@@ -13,11 +13,14 @@ package report;
 public class Seller {
 	
 	int inventory;//  재고
-	int price = 1000;
+	final int PRICE = 1000;
 	int howSell;
 	int capital;
 	
-
+	public Seller(int capital, int inventory) {
+		this.capital=capital;
+		this.inventory=inventory;
+	}
 	
 	public void sellProduct(int shoppingBasket) {
 		if(inventory<= shoppingBasket) {
@@ -38,14 +41,14 @@ public class Seller {
 	}
 	
 	public void exitMessige() {
-		capital =capital+(price*howSell);
+		capital =capital+(PRICE*howSell);
 		System.out.println("자본금은 : "+ capital +"원 입니다");
 		System.out.println("남은 재고는 : "+inventory+"개 입니다");
 		System.out.println("판매를 종료합니다");
 	}
 	
 	public void sellMessige() {
-		System.out.println("판매개수 : "+howSell+"개" + "판매금액 :" + (howSell*price) +"원 입니다");
+		System.out.println("판매개수 : "+howSell+"개" + "판매금액 :" + (howSell*PRICE) +"원 입니다");
 		System.out.println("판매를 완료했습니다");
 	}
 	

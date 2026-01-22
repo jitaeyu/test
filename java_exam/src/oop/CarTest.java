@@ -4,8 +4,9 @@ public class CarTest {
 	
 	public static void main(String[] args) {
 		int[] scoreArray = new int[7];
-		Car kona = new Car();
-		Car kanibal = new Car();
+		Car kona = new Car("kona");
+		Car kanibal = new Car("kanibal");
+		
 		System.out.println(kona);
 		boolean konaEnginState = kona.isEngineStart;
 		
