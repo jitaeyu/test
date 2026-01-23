@@ -1,10 +1,11 @@
-package oop;
+package com.ktdsuniversty.edu.vendingmachine;
 
+import com.ktdsuniversty.edu.vendingmachine.item.Drink;
+import com.ktdsuniversty.edu.vendingmachine.machine.DrinkArray;
 
 public class DrinkMachine {
 
 	public static void main(String[] args) {
-		
 		Drink bak = new Drink("박카스", 900, 15);
 		Drink mon = new Drink("몬스터", 1500, 20);
 		Drink hot = new Drink("핫식스", 1300, 10);

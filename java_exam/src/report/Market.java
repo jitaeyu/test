@@ -1,6 +1,5 @@
 package report;
 
-
 public class Market {
 
 	public static void main(String[] args) {
