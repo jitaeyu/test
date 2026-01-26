@@ -58,15 +58,128 @@ public class StringExam01 {
 				}
 			}
 		}
+		System.out.println();
 	}
 	
+	public void Exam06() {
+		String bj = "The Curious Case of Benjamin Button";
+		int count= 0;
+		for (int i = 0; i < bj.length(); i++) {
+			if (bj .charAt(i) == ' ') {
+				count++;
+			}
+		}
+		System.out.println("Q6 : "+(count+ 1));
+	}
+	
+	public void Exam07() {
+		String su= "734 893";
+		String[] number = su.split(" ");
+		String a = number[0];
+		String sangsu= "" + a.charAt(2) + a.charAt(1) + a.charAt(0);
+		String b = number[1];
+		String Stupidsangsu = "" + b.charAt(2) + b.charAt(1) + b.charAt(0);
+		int numberA = Integer.parseInt(sangsu);
+		int numnerB = Integer.parseInt(Stupidsangsu);
+		if(numberA>numnerB){
+			System.out.println("Q7: "+numberA);
+		}else{
+				System.out.println("Q7: "+numnerB);
+		}
+	}
+	
+	public void ExamPg01() {
+		String a = "abc";
+		String b = "aabcc";
+			if (b.contains(a)) {
+				System.out.println("Q1: "+1);
+			} else {
+				System.out.println("Q1: "+0);
+			}
+	}
+	public void ExamPg02() {
+		String a = "banana";
+		String b = "ana";
+		if (a.contains(b)) {
+			System.out.println("Q2 : "+1);
+		} else {
+			System.out.println("Q2 : "+0);
+		}
+	}
+	
+	public void ExamPg03() {
+		 int number = 123;
+		 String dap = String.valueOf(number);
+		 System.out.println("Q3: "+dap);
+	}
+	public void ExamPg04() {
+		String number = "10";
+		int dap = Integer.parseInt(number);
+		System.out.println("Q4: "+dap);
+	}
+	public void ExamPg05() {
+		String number = "0010";
+		int dapInt = Integer.parseInt(number);
+		String dapString = String.valueOf(dapInt);
+		System.out.println("Q5: "+dapString);
+	}
+	public void ExamPg06() {
+		String number = "123456789";
+		int sum = 0;
+		for (int i = 0; i < number.length(); i++) {
+			sum += number.charAt(i) - '0';
+		}
+		System.out.println("Q6: "+sum);
+	}
+	public void ExamPg07() {
+		String a = "aBcDeFg";
+		String dap = a.toLowerCase();
+		System.out.println("Q7: "+dap);
+}
+	public void ExamPg08() {
+		String a= "AbCdEfG";
+		String b = "aBc";
+		int dap=0;
+		if (a.toLowerCase().contains(b.toLowerCase())) {
+			dap= 1;
+		} else {
+			dap= 0;
+		}
+	System.out.println("Q8: "+dap);
+	}
+
+	public void ExamPg09() {
+		String[] strArr = {"AAA", "BBB", "CCC", "DDD"};
+		for (int i = 0; i < strArr.length; i++) {
+			if (i % 2 == 0) {
+				strArr[i] = strArr[i].toLowerCase();
+			} else {
+				strArr[i] = strArr[i].toUpperCase();
+			}
+		}		
+		System.out.print("Q9: ");
+		for (String s : strArr) {
+			System.out.print(s + " ");
+	}
+}
+	
 	public static void main(String[] args) {
-//		StringExam01 exam = new StringExam01();
 		StringExam01 exam = new StringExam01();
 		exam.Exam01();
 		exam.Exam02();
 		exam.Exam03();
 		exam.Exam04();
 		exam.Exam05();
+		exam.Exam06();
+		exam.Exam07();
+		exam.ExamPg01();
+		exam.ExamPg02();
+		exam.ExamPg03();
+		exam.ExamPg04();
+		exam.ExamPg05();
+		exam.ExamPg06();
+		exam.ExamPg07();
+		exam.ExamPg08();
+		exam.ExamPg09();
 	}
 }
