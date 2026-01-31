@@ -31,41 +31,25 @@ public class ConvenienceStore extends Mart{
 	}
 	public void sellConvenienceStore(String name ,int buyMoney) {
 		int findPoint = this.getPoint();
-//		if(rank==0) {
-//			this.earnRate=0.1;
-//		}else if(rank==2) {
-//			this.earnRate=0.3;
-//		}else{
-//			this.earnRate=0.005;
-//		}
+
 		if(this.getPoint()>=100) {
 
-			System.out.println("포인트를포함한사용가능금액:"+ (this.getInputMoney()+findPoint));
-			int changeon = super.sell(name, (this.getInputMoney()+findPoint));
-			int changeon2 = super.sell(name, this.getInputMoney());
+			System.out.println("포인트를포함한사용가능금액:"+ (buyMoney+findPoint));
+			int changeon = super.sell(name, (buyMoney+findPoint));
+			int changeon2 = super.sell(name, buyMoney);
 
 			this.setPoint(0);
-			double earnPoint = (super.getInputMoney()-changeon2)*this.earnRate;
+			double earnPoint = (buyMoney-changeon2)*this.earnRate;
 			
 			this.setPoint((int) earnPoint + findPoint);
 			System.out.println("적립포인트:"+this.getPoint());
 			
 		}else {
-			int changeoff = super.sell(name, this.getInputMoney());
+			int changeoff = super.sell(name, buyMoney);
 
-			double earnPoint = (super.getInputMoney()-changeoff)*this.earnRate;
+			double earnPoint = (buyMoney-changeoff)*this.earnRate;
 			this.setPoint((int) earnPoint + findPoint);
 			System.out.println("적립포인트:"+this.getPoint());
 		}
-		
-
-		
-		
-//				inputMoney-a;
-//		point=earnRate*0.1
-//		if(조건) {
-//			기본마켓 가져와서 mart.sell 실행? 그럼 기본마켓 갈아내고 확장성있게만들어야함 그거아니면뭐 여러메소드쪼개서 그메소드만쓰는거지
-//		}
 	}
-	
 }

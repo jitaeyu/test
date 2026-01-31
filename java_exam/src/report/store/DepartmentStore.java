@@ -3,7 +3,6 @@ package report.store;
 public class DepartmentStore extends ConvenienceStore{
 	public DepartmentStore(String name, int price, int inventory, int inputMoney, int point, double earnRate) {
 		super(name, price, inventory, inputMoney, point, earnRate);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void sellDepartmentStore(String name ,int buyMoney,int rank) {

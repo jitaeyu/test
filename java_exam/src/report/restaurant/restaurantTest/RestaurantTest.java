@@ -1,9 +1,11 @@
 package report.restaurant.restaurantTest;
 
 import report.restaurant.data.ContentData;
+import report.restaurant.exceptions.ArrayException;
 import report.restaurant.exceptions.DrunkenException;
 import report.restaurant.exceptions.FullException;
 import report.restaurant.exceptions.MoneyException;
+import report.restaurant.exceptions.NullException;
 import report.restaurant.exceptions.StockException;
 import report.restaurant.restaurant.Restaurant;
 
@@ -43,6 +45,10 @@ public class RestaurantTest {
 			System.out.println(me.getMessage());
 		}catch (StockException se) {
 			System.out.println(se.getMessage());
+		}catch (NullException ne) {
+			System.out.println(ne.getMessage());
+		}catch (ArrayException ae) {
+			System.out.println(ae.getMessage());
 		}
 		
 	}

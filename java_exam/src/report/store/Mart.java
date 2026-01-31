@@ -2,28 +2,18 @@ package report.store;
 
 
 public class Mart {
-//	Mart mart;
-//	Vo[] marts;
-//	
-//	public Mart(Vo p1, Vo p2, Vo p3, Vo p4) {
-//		this.marts = new Vo[4];
-//		this.marts[0] = p1;
-//		this.marts[1] = p2;
-//		this.marts[2] = p3;
-//		this.marts[3] = p4;
-//		Mart realmart = new Mart(p1, p2, p3, p4);
-		
+
 	private String name;
 	private int price;
 	private int inventory;
-	private int inputMoney;
+	private int pocketMoney;
 	
 //	}
 	public Mart(String name,int price, int inventory,int inputMoney) {
 		this.name=name;
 		this.price=price;
 		this.inventory=inventory;
-		this.inputMoney=inputMoney;
+		this.pocketMoney=inputMoney;
 	}
 	
 	
@@ -64,29 +54,30 @@ public class Mart {
 
 
 
-	public int getInputMoney() {
-		return inputMoney;
+	public int getPocketMoney() {
+		return pocketMoney;
 	}
 
 
 
-	public void setInputMoney(int inputMoney) {
-		this.inputMoney = inputMoney;
+	public void setPocketMoney(int pocketMoney) {
+		this.pocketMoney = pocketMoney;
 	}
 
 
 
-	public int sell(String name, int inputMoney) {
+	public int sell(String name, int buymoney) {
 //		mart.setInputMoney(inputMoney);
 		
 		if(this.getInventory()>0) {
 			//구매가능
-			if(this.getInputMoney()>=this.getPrice()) {
+			if(buymoney>=this.getPrice()) {
 				//구매가능
 				this.setInventory(this.getInventory()-1);//팔았다
 				int pay = this.getPrice();
 //				System.out.println("판매상품명: "+this.name+" \n판매금: "+pay);
-				int sum=this.getInputMoney()-this.getPrice();
+				int sum=buymoney - this.getPrice(); // 거스름돈 계산
+
 //				System.out.println("거스름돈:"+sum);
 				return sum;
 				
