@@ -6,23 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-/**
-비행기편위 이름을 입력하면, 좌석 현황을 볼수있습니다.
-항공기편의 이름을 입력하세요
-0003<-----------입력
-0 : X  1 : X  2 : X  3 : X  4 : X  5 : X  6 : X  7 : X  8 : X  
-좌석을 예약하려면 번호를 입력하세요 예약가능: O, 예약불가능 : X
-2<-----------입력
-2번 좌석을 예약하시겠습니까? 하려면 Y/N
-Y<-----------입력
-항공편 예약을 완료하였습니다
-0 : X  1 : X  2 : O  3 : X  4 : X  5 : X  6 : X  7 : X  8 : X  항공권 예약완료 
-종료를위해 exit를 입력하세요
-exit<-----------입력
-종료합니다
+import report.restaurant.exceptions.NullException;
 
-@@@@@@@@@@@@@@@@@@@실행시 콘솔입니다@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-*/
+/**
+ * 비행기편위 이름을 입력하면, 좌석 현황을 볼수있습니다. 항공기편의 이름을 입력하세요 0003<-----------입력 0 : X 1 : X
+ * 2 : X 3 : X 4 : X 5 : X 6 : X 7 : X 8 : X 좌석을 예약하려면 번호를 입력하세요 예약가능: O, 예약불가능
+ * : X 2<-----------입력 2번 좌석을 예약하시겠습니까? 하려면 Y/N Y<-----------입력 항공편 예약을 완료하였습니다
+ * 0 : X 1 : X 2 : O 3 : X 4 : X 5 : X 6 : X 7 : X 8 : X 항공권 예약완료 종료를위해 exit를
+ * 입력하세요 exit<-----------입력 종료합니다
+ * 
+ * @@@@@@@@@@@@@@@@@@@실행시 콘솔입니다@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ */
 public class ListMap {
 
 	public static void Reservation(Map<Integer, List<String>> aircraft) {
@@ -34,12 +28,20 @@ public class ListMap {
 			System.out.println("항공기편의 이름을 입력하세요");
 			int getButton = sc.nextInt();
 			List<String> aircraftData = aircraft.get(getButton);
-			if (!aircraftData.isEmpty()) {
+			if(aircraftData==null) {
+				try {
+					throw new NullException("입력값은 null일수없습니다");
+				} catch (NullException e) {
+					System.out.println(e.getMessage());
+				}
 				
+			}
+			if (!aircraftData.isEmpty()) {
+
 				int i = 0;
 				for (String data : aircraftData) {
 					i++;
-					System.out.print(i-1 + " : " + data + "  ");
+					System.out.print(i - 1 + " : " + data + "  ");
 				}
 				while (true) {
 					System.out.println("\n좌석을 예약하려면 번호를 입력하세요 예약가능: O, 예약불가능 : X");
@@ -52,7 +54,7 @@ public class ListMap {
 							int j = 0;
 							for (String data : aircraftData) {
 								j++;
-								System.out.print(j-1 + " : " + data + "  ");
+								System.out.print(j - 1 + " : " + data + "  ");
 							}
 							System.out.println("항공권 예약완료 \n종료를위해 exit를 입력하세요");
 							break;
@@ -105,6 +107,8 @@ public class ListMap {
 //		System.out.println(aircraft.get(0002));
 //		System.out.println(data2);
 //		System.out.println(data.get(4));
-		Reservation(aircraft);
+
+			Reservation(aircraft);
+
 	}
 }
