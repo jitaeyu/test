@@ -44,9 +44,9 @@ public class ListMap {
 					System.out.print(i - 1 + " : " + data + "  ");
 				}
 				while (true) {
-					System.out.println("\n좌석을 예약하려면 번호를 입력하세요 예약가능: O, 예약불가능 : X");
+					System.out.println("\n❌❌❌❌좌석을 예약하려면 번호를 입력하세요 예약가능: O, 예약불가능 : X");
 					int getbutton2 = sc.nextInt();
-					if (aircraftData.get(getbutton2).equals("X")) {
+					if (aircraftData.get(getbutton2).equalsIgnoreCase("X")) {
 						System.out.println(getbutton2 + "번 좌석을 예약하시겠습니까? 하려면 Y/N");
 						if (sc.next().equals("Y")) {
 							aircraftData.set(getbutton2, "O");
@@ -66,6 +66,7 @@ public class ListMap {
 					} else {
 						System.out.println("예약 불가능한 좌석입니다");
 					}
+					continue;
 				}
 
 			} else {
