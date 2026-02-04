@@ -30,9 +30,9 @@ public class Item {
 		this.expireDate = expireDate;
 	}
 
-	@Override
-	public String toString() {
-		return "상품명: " + name + " 소비기한" + expireDate;
-	}
+//	@Override
+//	public String toString() {
+//		return "상품명: " + name + " 소비기한" + expireDate;
+//	}
 	//g s to
 }

@@ -28,7 +28,7 @@ public class Store {
 				if(tempDay.isAfter(LocalDate.now())
 						&& tempDay.isBefore(LocalDate.now().plusDays(4))) {
 					System.out.println(i.getName()+"가능한 빨리드세요");
-//		"가능한 빨리드세요출력"
+					//		"가능한 빨리드세요출력"
 				}
 				
 			}else if(base == Base.NOW) {
@@ -42,14 +42,9 @@ public class Store {
 				//소비기한이 지났다면
 				if(tempDay.isBefore(LocalDate.now())) {
 					System.out.println(i.getName()+"소비기한이 지나 판매하지않습니다");
-//		"소비기한이 지나 판매하지않습니다 출력"
+					//		"소비기한이 지나 판매하지않습니다 출력"
 				}
-				
 			}
-			
-			
-			
-			
 		}
 		
 	}
